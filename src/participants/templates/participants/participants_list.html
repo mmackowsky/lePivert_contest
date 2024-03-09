@@ -1,0 +1,103 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 105vh; /* Ustaw wysokość całego okna przeglądarki */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image:url({% static 'images/app_background.jpeg' %});
+            background-size: cover; /* Zapewnia, że obraz wypełni cały obszar tła */
+            background-position: center; /* Ustawia obraz na środku obszaru tła */
+            background-repeat: no-repeat; /* Wyłącza powtarzanie obrazu */
+        }
+
+        .content {
+            /* Styl dla zawartości wewnątrz diva */
+            color: #ffffff; /* Domyślny kolor tekstu */
+        }
+        /* CSS */
+        .button-4 {
+          appearance: none;
+          background-color: #FAFBFC;
+          border: 1px solid rgba(27, 31, 35, 0.15);
+          border-radius: 6px;
+          box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+          box-sizing: border-box;
+          color: #24292E;
+          cursor: pointer;
+          font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          list-style: none;
+          padding: 6px 16px;
+          position: relative;
+          transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          vertical-align: middle;
+          white-space: nowrap;
+          word-wrap: break-word;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 18%;
+          bottom: 60px;
+        }
+
+        .button-4:hover {
+          background-color: #F3F4F6;
+          text-decoration: none;
+          transition-duration: 0.1s;
+        }
+
+        .button-4:disabled {
+          background-color: #FAFBFC;
+          border-color: rgba(27, 31, 35, 0.15);
+          color: #959DA5;
+          cursor: default;
+        }
+
+        .button-4:active {
+          background-color: #EDEFF2;
+          box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+          transition: none 0s;
+        }
+
+        .button-4:focus {
+          outline: 1px transparent;
+        }
+
+        .button-4:before {
+          display: none;
+        }
+
+        .button-4:-webkit-details-marker {
+          display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content">
+        {% block content %}
+        <img src="{% static "images/le_pivert_logo.png" %}" alt="logo" style="position: relative; height: 200px; width: 300px; bottom: 150px; align-items: center; justify-content: center;">
+        <hr style="position: relative; bottom: 120px; width: 600%; right: 250%;">
+        <!-- HTML !-->
+        <a href="{% url 'random-winner' %}"><button class="button-4" role="button" style="position: relative; width: 200px; height: 60px;">LOSUJ</button></a>
+        {% endblock %}
+    </div>
+
+</body>
+</html>
