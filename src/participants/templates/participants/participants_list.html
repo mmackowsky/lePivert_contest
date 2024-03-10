@@ -95,7 +95,10 @@
         <img src="{% static "images/le_pivert_logo.png" %}" alt="logo" style="position: relative; height: 200px; width: 300px; bottom: 150px; align-items: center; justify-content: center;">
         <hr style="position: relative; bottom: 120px; width: 600%; right: 250%;">
         <!-- HTML !-->
-        <a href="{% url 'random-winner' %}"><button class="button-4" role="button" style="position: relative; width: 200px; height: 60px;">LOSUJ</button></a>
+        <form action="{% url 'random-winner' %}" method="get">
+            <button type="submit" class="button-4" style="position: relative; width: 200px; height: 60px;">LOSUJ</button>
+        </form>
+
         {% endblock %}
     </div>
 
